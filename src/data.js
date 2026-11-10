@@ -6,8 +6,18 @@ const G = (b) => L(b ? 'σ2p' : 'σ*2p', b ? 'sigma2p' : 'sigma*2p', 'σ', b, 1,
 export const MOL = {
   H2: { f: 'H₂', name: 'Hydrogen', n: 2, lv: s1 },
   He2: { f: 'He₂', name: 'Helium', n: 4, lv: s1 },
+  Li2: { f: 'Li₂', name: 'Lithium', n: 6, lv: [...s1, ...s2] },
+  Be2: { f: 'Be₂', name: 'Beryllium', n: 8, lv: [...s1, ...s2] },
+
+  B2: { f: 'B₂', name: 'Boron', n: 10, lv: [...s1, ...s2, P(1), G(1), P(0), G(0)] },
+  C2: { f: 'C₂', name: 'Carbon', n: 12, lv: [...s1, ...s2, P(1), G(1), P(0), G(0)] },
   N2: { f: 'N₂', name: 'Nitrogen', n: 14, lv: [...s1, ...s2, P(1), G(1), P(0), G(0)] }, // s-p mixing: π2p below σ2p
   O2: { f: 'O₂', name: 'Oxygen', n: 16, lv: [...s1, ...s2, G(1), P(1), P(0), G(0)] },
+  F2: { f: 'F₂', name: 'Fluorine', n: 18, lv: [...s1, ...s2, G(1), P(1), P(0), G(0)] },
+  Ne2: { f: 'Ne₂', name: 'Neon', n: 20, lv: [...s1, ...s2, G(1), P(1), P(0), G(0)] },
+
+  CO: { f: 'CO', name: 'Carbon monoxide', n: 14, lv: [...s1, ...s2, P(1), G(1), P(0), G(0)] },
+  NO: { f: 'NO', name: 'Nitric oxide', n: 15, lv: [...s1, ...s2, G(1), P(1), P(0), G(0)] },
 };
 export const slotsOf = (m) => m.lv.flatMap((v, li) => Array.from({ length: v.c }, (_, k) => ({ li, k })));
 // Aufbau (lowest level first) + Hund (empty degenerate orbital first) + Pauli (max 2, opposite spin)
