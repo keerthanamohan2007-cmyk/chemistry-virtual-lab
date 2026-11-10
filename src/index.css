@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { @apply bg-[#050b1f] text-slate-200 min-h-screen; font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+  background-image: radial-gradient(ellipse at 15% 0%, rgba(34,211,238,.14), transparent 50%), radial-gradient(ellipse at 90% 10%, rgba(139,92,246,.16), transparent 45%), linear-gradient(rgba(148,163,184,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.05) 1px, transparent 1px);
+  background-size: auto, auto, 40px 40px, 40px 40px; background-attachment: fixed; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; }
+.panel { @apply bg-slate-900/60 backdrop-blur-md border border-cyan-400/20 rounded-xl p-4 shadow-[0_0_24px_rgba(34,211,238,.07)]; }
+.ph { @apply mono text-[11px] uppercase tracking-[.18em] text-cyan-300 mb-3 flex items-center gap-2; }
+.ph::before { content: ''; @apply w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]; }
+.btn { @apply px-4 py-2 rounded-lg font-semibold text-slate-900 bg-gradient-to-r from-cyan-300 to-violet-400 hover:brightness-110 active:scale-95 transition disabled:opacity-40; }
+.btn2 { @apply px-3 py-2 rounded-lg font-medium text-cyan-200 border border-cyan-400/40 bg-slate-900/50 hover:bg-cyan-400/10 active:scale-95 transition; }
+.on { @apply bg-cyan-400/20 border-cyan-300 text-white shadow-[0_0_12px_rgba(34,211,238,.35)]; }
+.inp { @apply w-full rounded-lg border border-cyan-400/30 bg-slate-950/70 px-3 py-2 text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400; }
+.fade { animation: fade .4s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pulse2 { 50% { opacity: .35; } }
+.led { animation: pulse2 1.6s infinite; }
